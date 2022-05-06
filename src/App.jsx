@@ -1,22 +1,16 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState, useRef } from 'react';
-import { SampleActions } from './actions';
+import { DrawingBoard, ViewBoard } from './components';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 
 function App() {
 
-  const dispatch = useDispatch();
-
-  const ip = useSelector((state) => !!state.sample && state.sample.ip) || '';
-
-  useEffect(() => {
-    dispatch(SampleActions.sampleAction());
-  }, []);
-
   return (
     <div className="App">
-      <h1>Test</h1>
-      <h2>{ip}</h2>
+      <Routes>
+        <Route path="/" element={<h1>Test</h1>} />
+        <Route path="/drawer" element={<DrawingBoard />} />
+        <Route path="/guesser" element={<ViewBoard />} />
+      </Routes>
     </div>
   );
 }

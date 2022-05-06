@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "peerjs": "^2.0.0-beta.3",
     "react": "^17.0.2",
+    "react-canvas-draw": "^1.2.1",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.2",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
+    "peer": "^0.6.1",
     "vite": "^2.8.0"
   }
 }
