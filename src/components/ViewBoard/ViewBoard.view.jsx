@@ -10,6 +10,7 @@ export default function ViewBoardView(props) {
                 immediateLoading={true}
                 canvasWidth={800}
                 canvasHeight={500}
+                disabled={true}
                 style={{
                     marginTop: '5%'
                 }}

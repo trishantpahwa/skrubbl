@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import Peer from 'peerjs';
+// import Peer from 'peerjs';
 import DrawingBoardView from "./DrawingBoard.view";
 
 export default function DrawingBoardContainer(props) {
 
-    const [peer, setPeer] = useState(null);
     const canvasRef = useRef(null);
     const [data, setData] = useState(null);
     const [change, setChange] = useState({});
+    const [waiting, setWaiting] = useState(false);
 
     const onChange = (e) => {
         if (canvasRef.current) {
@@ -20,27 +20,30 @@ export default function DrawingBoardContainer(props) {
     }
 
     useEffect(() => {
-        setPeer(new Peer('drawer', {
-            host: 'localhost',
-            port: 9000,
-            path: '/myapp'
-        }));
-    }, []);
-
-    useEffect(() => {
-        if (peer && change) {
-            const conn = peer.connect('guesser');
-            conn.on('open', function () {
-                if (Object.keys(change).length) conn.send(change);
+        if (props.peer && change) {
+            const connections = props.connections.map(_conn => {
+                const conn = props.peer.connect(_conn);
+                conn.on('open', function () {
+                    if (Object.keys(change).length) conn.send(change);
+                });
+                return conn;
             });
+            // console.log(connections);
         }
     }, [change]);
+
+    useEffect(() => {
+        if(props.connections.length === 0) setWaiting(true);
+        else setWaiting(false);
+    }, [waiting]);
 
     return (
         <div>
             <DrawingBoardView
+                waiting={waiting}
                 canvasRef={canvasRef}
                 onChange={onChange}
+                words={props.words}
             />
         </div>
     )
