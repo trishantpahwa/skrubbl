@@ -20,7 +20,7 @@ export default function RoomContainer(props) {
     const [activeWord, setActiveWord] = useState();
 
     const getConnections = async () => {
-        const { data } = await axios.get(`http://192.168.1.38:8002/connection?roomID=${roomID}`);
+        const { data } = await axios.get(`https://${import.meta.env.VITE_PEER_SERVER_IP}/connection?roomID=${roomID}`);
         if (data?.connections.length) {
             setConnections(data.connections.filter(conn => conn !== `${roomID}-${id}`));
         }
@@ -41,7 +41,7 @@ export default function RoomContainer(props) {
         console.log(import.meta.env)
         setPeer(new Peer(`${roomID}-${id}`, {
             host: import.meta.env.VITE_PEER_SERVER_IP,
-            port: import.meta.env.VITE_PEER_SERVER_PORT,
+            port: '',
             path: import.meta.env.VITE_PEER_SERVER_PATH
         }));
     }
