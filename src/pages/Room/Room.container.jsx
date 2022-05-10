@@ -38,7 +38,6 @@ export default function RoomContainer(props) {
     }
 
     const connectToPeerServer = () => {
-        console.log(import.meta.env)
         setPeer(new Peer(`${roomID}-${id}`, {
             host: import.meta.env.VITE_PEER_SERVER_IP,
             port: '',
