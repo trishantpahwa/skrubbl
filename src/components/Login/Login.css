@@ -1,0 +1,41 @@
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-view {
+    border-radius: 48px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 19px 19px 43px #858585,
+        -19px -19px 32px #ffffff;
+    height: 65vh;
+    animation: bottom-to-top 1s linear forwards;
+}
+
+@keyframes bottom-to-top {
+    from {
+        margin-left: 100%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
+
+@media (min-width: 700px) {
+    .login-view {
+        width: 45%;
+    }
+}
+
+@media (max-width: 700px) {
+    .login-view {
+        width: 90%;
+    }
+}
+
+.google_sign_in_img {
+    cursor: pointer;
+}

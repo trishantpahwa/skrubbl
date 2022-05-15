@@ -1,3 +1,7 @@
+import Home from './Home';
 import Room from './Room';
 
-export { Room };
+export {
+    Home,
+    Room
+};

@@ -1,0 +1,65 @@
+.dashboard-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-view {
+    border-radius: 48px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 19px 19px 43px #858585,
+        -19px -19px 32px #ffffff;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8%;
+}
+
+.dashboard-btn {
+    border-radius: 48px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 10px 10px 33px #858585,
+        -10px -10px 33px #ffffff;
+    height: 10%;
+    width: 45%;
+}
+
+.dashboard-txt-box {
+    border-radius: 48px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 10px 10px 33px #858585,
+        -10px -10px 33px #ffffff;
+    height: 9%;
+    width: 45%;
+    font-size: 1.2rem;
+    text-indent: 0.8rem;
+}
+
+.room-id-div {
+    display: flex;
+    gap: 5%;
+}
+
+.room-id-div > .dashboard-btn {
+    height: 100%;
+}
+
+.room-id-div > .dashboard-txt-box {
+    height: 80%;
+}
+
+
+@media (min-width: 700px) {
+    .dashboard-view {
+        width: 45%;
+    }
+}
+
+@media (max-width: 700px) {
+    .dashboard-view {
+        width: 90%;
+    }
+}
