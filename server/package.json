@@ -1,0 +1,38 @@
+{
+  "name": "skrubbl-server",
+  "version": "1.0.0",
+  "description": "PeerJS server to run scrubbl.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=DEV nodemon index.js",
+    "test": "NODE_ENV=TEST mocha --bail --exit --timeout 10000",
+    "start": "NODE_ENV=PROD node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trishantpahwa/skrubbl-server.git"
+  },
+  "keywords": [
+    "Skrubbl"
+  ],
+  "author": "Trishant Pahwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trishantpahwa/skrubbl-server/issues"
+  },
+  "homepage": "https://github.com/trishantpahwa/skrubbl-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.1",
+    "peer": "^0.6.1",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.16"
+  }
+}
